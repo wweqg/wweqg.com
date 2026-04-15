@@ -18,7 +18,7 @@ export function Nav() {
   return (
     <header className="site-nav">
       <div className="nav-inner">
-        <div className="nav-logo">{siteConfig.name}</div>
+        <Link href="/" className="nav-logo">{siteConfig.name}</Link>
 
         <button
           className="nav-toggle"

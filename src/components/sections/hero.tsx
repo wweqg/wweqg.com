@@ -17,7 +17,7 @@ export function Hero() {
         the best systems feel effortless to use and effortless to maintain.
       </p>
       <div className="hero-cta">
-        <a href="#work" className="pill pill-filled">
+        <a href="/#work" className="pill pill-filled">
           See my work <span className="pill-icon">→</span>
         </a>
         <a href="/resume.pdf" className="pill pill-ghost">
