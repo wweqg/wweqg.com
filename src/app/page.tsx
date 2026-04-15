@@ -8,27 +8,13 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main
-        id="main-content"
-        className="mx-auto max-w-[1080px]"
-        style={{ padding: '0 var(--s-7)' }}
-      >
+      <main id="main-content" className="page-wrap">
         <Hero />
         <Experience />
         <Projects />
         <Contact />
       </main>
-      <footer
-        className="text-center"
-        style={{
-          padding: 'var(--s-5) var(--s-7)',
-          fontSize: 'var(--t-xs)',
-          color: 'var(--text-3)',
-          borderTop: '1px solid var(--border)',
-        }}
-      >
-        © 2026
-      </footer>
+      <footer className="site-footer">© 2026</footer>
     </>
   )
 }

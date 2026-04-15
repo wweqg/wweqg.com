@@ -6,12 +6,12 @@ import { ScrollReveal } from '@/components/ui/scroll-reveal'
 
 export function Experience() {
   return (
-    <section className="section" id="experience" style={{ padding: 'var(--s-9) 0', borderTop: '1px solid var(--border)' }}>
+    <section className="section" id="experience">
       <div className="two-col">
         <ScrollReveal>
           <div className="side-label">Experience</div>
         </ScrollReveal>
-        <div className="flex flex-col">
+        <div>
           {experiences.map((exp, i) => (
             <ExperienceItem key={exp.date} exp={exp} delay={0.05 * (i + 1)} />
           ))}
@@ -39,10 +39,8 @@ function ExperienceItem({
   }
 
   const handleMouseLeave = () => {
-    const el = ref.current
-    if (!el) return
-    el.style.setProperty('--mx', '50%')
-    el.style.setProperty('--my', '50%')
+    ref.current?.style.setProperty('--mx', '50%')
+    ref.current?.style.setProperty('--my', '50%')
   }
 
   return (
@@ -56,14 +54,12 @@ function ExperienceItem({
         <div className="item-glow" />
         <div className="exp-date">{exp.date}</div>
         <div>
-          <h3 style={{ fontSize: 'var(--t-lg)', fontWeight: 600, letterSpacing: '-0.3px', marginBottom: 'var(--s-2)', lineHeight: 1.3 }}>
-            {exp.title} <span style={{ color: 'var(--text-2)', fontWeight: 400 }}>· {exp.company}</span>
+          <h3 className="exp-title">
+            {exp.title} <span className="exp-company">· {exp.company}</span>
           </h3>
-          <p style={{ fontSize: 'var(--t-sm)', color: 'var(--text-2)', lineHeight: 1.65, maxWidth: 480 }}>
-            {exp.description}
-          </p>
+          <p className="exp-desc">{exp.description}</p>
           {exp.tags.length > 0 && (
-            <div className="flex flex-wrap" style={{ gap: 'var(--s-1)', marginTop: 'var(--s-3)' }}>
+            <div className="exp-tags">
               {exp.tags.map((tag) => (
                 <span key={tag} className="tag">{tag}</span>
               ))}

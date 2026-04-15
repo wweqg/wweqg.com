@@ -3,7 +3,7 @@ import { ScrollReveal } from '@/components/ui/scroll-reveal'
 
 export function Projects() {
   return (
-    <section className="section" id="work" style={{ padding: 'var(--s-9) 0', borderTop: '1px solid var(--border)' }}>
+    <section className="section" id="work">
       <div className="two-col">
         <ScrollReveal>
           <div className="side-label">Selected Work</div>
@@ -20,7 +20,7 @@ export function Projects() {
                   <span className="proj-ext">↗</span>
                 </div>
                 <p>{proj.description}</p>
-                <div className="flex flex-wrap" style={{ gap: 'var(--s-1)' }}>
+                <div className="exp-tags">
                   {proj.tags.map((tag) => (
                     <span key={tag} className="tag tag-accent">{tag}</span>
                   ))}
