@@ -18,8 +18,8 @@ const newsreader = Newsreader({
 })
 
 export const metadata: Metadata = {
-  title: 'YourName — Software Engineer',
-  description: 'Software engineer focused on distributed systems and developer tools.',
+  title: 'Zhang Weiqiang — Software Engineer',
+  description: 'Backend engineer at TikTok. NUS Computer Science. Building systems that scale.',
   other: {
     'theme-color': '#0c0c0b',
   },

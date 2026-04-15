@@ -7,14 +7,14 @@ export function Hero() {
         Available for opportunities
       </div>
       <h1>
-        I build systems<br />
+        I build backend systems<br />
         that scale with <span className="serif">elegance.</span>
       </h1>
       <p className="hero-body">
-        Software engineer at ByteDance, focused on{' '}
-        <span className="serif">distributed systems</span> and developer tools.
-        I believe great engineering is invisible — the best systems feel
-        effortless to use and effortless to maintain.
+        Backend engineer at TikTok, NUS Computer Science grad based in Singapore.
+        Focused on <span className="serif">distributed systems</span> and
+        large-scale services. I believe great engineering is invisible —
+        the best systems feel effortless to use and effortless to maintain.
       </p>
       <div className="hero-cta">
         <a href="#work" className="pill pill-filled">
