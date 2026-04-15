@@ -6,7 +6,7 @@ export function Hero() {
       <div className="hero-glow" aria-hidden="true" />
       <div className="hero-badge">
         <span className="hero-badge-dot" />
-        Available for opportunities
+        Building things at TikTok
       </div>
       <h1>
         Hey, I&apos;m Weiqiang.<br />
