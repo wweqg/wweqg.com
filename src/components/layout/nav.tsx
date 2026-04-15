@@ -3,6 +3,11 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { navLinks, siteConfig } from '@/lib/constants'
+import { ScrollLink } from '@/components/ui/scroll-link'
+
+function isHashLink(href: string) {
+  return href.includes('#')
+}
 
 export function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -36,16 +41,27 @@ export function Nav() {
         </nav>
 
         <nav className={`nav-mobile ${menuOpen ? 'open' : ''}`}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="nav-link"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            isHashLink(link.href) ? (
+              <ScrollLink
+                key={link.href}
+                href={link.href}
+                className="nav-link"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </ScrollLink>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="nav-link"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
       </div>
     </header>
@@ -74,6 +90,20 @@ function MagneticNavLink({
   const handleMouseLeave = () => {
     ref.current?.style.removeProperty('--tx')
     ref.current?.style.removeProperty('--ty')
+  }
+
+  if (isHashLink(href)) {
+    return (
+      <ScrollLink
+        ref={ref}
+        href={href}
+        className="nav-link"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        {label}
+      </ScrollLink>
+    )
   }
 
   return (
