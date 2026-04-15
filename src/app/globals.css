@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
+/* ===== DESIGN TOKENS ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Spacing: 8px grid */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px;
+  --s-4: 16px; --s-5: 24px; --s-6: 32px;
+  --s-7: 48px; --s-8: 64px; --s-9: 96px;
+  --s-10: 128px;
+
+  /* Type: 1.25 scale */
+  --t-2xs: 11px; --t-xs: 12px; --t-sm: 14px; --t-base: 15px;
+  --t-lg: 19px;  --t-xl: 24px; --t-2xl: 30px;
+  --t-3xl: clamp(32px, 4.5vw, 48px);
+
+  /* Radii */
+  --r-sm: 6px; --r-md: 8px; --r-lg: 12px; --r-full: 980px;
+
+  /* Palette */
+  --bg: #0c0c0b;
+  --surface: #161615;
+  --surface-hover: #1c1c1a;
+  --border: rgba(255,255,255,0.08);
+
+  --text-1: #ededeb;
+  --text-2: #a3a19c;
+  --text-3: #8a8884;
+
+  --accent: #8aad6f;
+  --accent-dim: rgba(138,173,111,0.08);
+  --accent-strong: #6e9454;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  background-image: radial-gradient(
+    ellipse 80% 50% at 50% 0%,
+    rgba(138,173,111,0.04) 0%,
+    transparent 60%
+  );
+  color: var(--text-1);
+  font-size: var(--t-base);
+  line-height: 1.6;
+}
+
+/* Noise texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px;
+}
+
+::selection { background: rgba(138,173,111,0.25); }
+
+/* A11y */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
