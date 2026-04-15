@@ -1,8 +1,8 @@
 export const siteConfig = {
-  name: 'Weiqiang',
+  name: 'wweqg',
   title: 'Zhang Weiqiang — Software Engineer',
   description: 'Backend engineer at TikTok. NUS Computer Science. Building systems that scale.',
-  url: 'https://weiqiang.dev',
+  url: 'https://wweqg.dev',
 }
 
 export const navLinks = [

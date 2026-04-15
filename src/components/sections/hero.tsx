@@ -9,14 +9,14 @@ export function Hero() {
         Available for opportunities
       </div>
       <h1>
-        I build backend systems<br />
-        that scale with <span className="serif">elegance.</span>
+        Hey, I&apos;m Weiqiang.<br />
+        I build systems that <span className="serif">scale.</span>
       </h1>
       <p className="hero-body">
-        Backend engineer at TikTok, NUS Computer Science grad based in Singapore.
-        Focused on <span className="serif">distributed systems</span> and
-        large-scale services. I believe great engineering is invisible —
-        the best systems feel effortless to use and effortless to maintain.
+        Backend engineer at TikTok, based in Singapore. I graduated from NUS
+        with a degree in Computer Science and now work on distributed systems
+        and large-scale services. I care about writing clean, reliable code
+        that holds up under pressure.
       </p>
       <div className="hero-cta">
         <ScrollLink href="/#work" className="pill pill-filled">
