@@ -13,7 +13,7 @@ export const navLinks = [
 ] as const
 
 export const socialLinks = [
-  { href: 'mailto:zhangweiqiang.z@bytedance.com', label: 'Email' },
+  { href: 'mailto:zhangwweqg@gmail.com', label: 'Email' },
   { href: 'https://github.com/wweqg', label: 'GitHub' },
   { href: 'https://www.linkedin.com/in/wweqg/', label: 'LinkedIn' },
 ] as const
