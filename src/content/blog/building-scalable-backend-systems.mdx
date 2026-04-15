@@ -1,0 +1,39 @@
+---
+title: "Building Scalable Backend Systems at TikTok"
+date: "2025-08-15"
+description: "Lessons learned from working on services handling millions of requests per second."
+---
+
+When you join a team that serves hundreds of millions of users, the first thing you learn is that everything you thought you knew about "scale" was off by a few orders of magnitude.
+
+## The reality of scale
+
+At TikTok, a "small" service might handle 100K QPS on a quiet day. The systems I work on process millions of events per second, and the margin for error is razor-thin. A 50ms latency spike that would be invisible in a smaller system can cascade into a full-blown incident here.
+
+## What I've learned so far
+
+### 1. Simplicity is the ultimate sophistication
+
+The most reliable systems I've seen are not the cleverest ones — they're the simplest. Every abstraction layer is a potential failure point. When you're operating at this scale, you want boring, predictable code that does exactly one thing well.
+
+```go
+// Good: explicit, boring, works at 3am when you're on-call
+func ProcessEvent(ctx context.Context, event *Event) error {
+    if err := validate(event); err != nil {
+        return fmt.Errorf("validation failed: %w", err)
+    }
+    return store.Write(ctx, event)
+}
+```
+
+### 2. Observability is not optional
+
+You cannot debug a distributed system by reading code. You need metrics, traces, and logs — and they need to be there *before* things break. I've learned to instrument first, implement second.
+
+### 3. Graceful degradation over perfect reliability
+
+100% uptime is a myth. The question isn't "will this fail?" but "how does it fail?" Circuit breakers, fallbacks, and rate limiting are not nice-to-haves — they're the foundation.
+
+## Looking ahead
+
+I'm still early in my career, and every week brings a new lesson in distributed systems. The gap between textbook knowledge and production reality is vast, and I'm grateful to be learning on the job at this scale.
