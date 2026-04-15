@@ -612,9 +612,11 @@
 }
 .prose pre {
   margin: var(--s-5) 0;
+  padding: var(--s-5);
   border-radius: var(--r-md);
   border: 1px solid var(--border);
   overflow-x: auto;
+  tab-size: 2;
 }
 .prose pre code {
   background: none;
@@ -626,6 +628,29 @@
   border: none;
   border-top: 1px solid var(--border);
   margin: var(--s-8) 0;
+}
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--r-md);
+  margin: var(--s-5) 0;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--s-5) 0;
+  font-size: var(--t-sm);
+}
+.prose th,
+.prose td {
+  padding: var(--s-2) var(--s-3);
+  border: 1px solid var(--border);
+  text-align: left;
+}
+.prose th {
+  font-weight: 600;
+  color: var(--text-1);
+  background: rgba(255,255,255,0.03);
 }
 
 /* ===== RESPONSIVE ===== */

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { navLinks, siteConfig } from '@/lib/constants'
 
 export function Nav() {
@@ -36,15 +37,14 @@ export function Nav() {
 
         <nav className={`nav-mobile ${menuOpen ? 'open' : ''}`}>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              className={`nav-link ${'external' in link ? 'nav-link--blog' : ''}`}
+              className="nav-link"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
-              {'external' in link && ' ↗'}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
@@ -55,11 +55,9 @@ export function Nav() {
 function MagneticNavLink({
   href,
   label,
-  external,
 }: {
   href: string
   label: string
-  external?: boolean
 }) {
   const ref = useRef<HTMLAnchorElement>(null)
 
@@ -79,15 +77,14 @@ function MagneticNavLink({
   }
 
   return (
-    <a
+    <Link
       ref={ref}
       href={href}
-      className={`nav-link ${external ? 'nav-link--blog' : ''}`}
+      className="nav-link"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       {label}
-      {external && ' ↗'}
-    </a>
+    </Link>
   )
 }

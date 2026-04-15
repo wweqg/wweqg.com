@@ -20,6 +20,11 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: `${post.title} — Zhang Weiqiang`,
     description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: 'article',
+    },
   }
 }
 

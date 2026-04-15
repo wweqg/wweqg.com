@@ -21,6 +21,15 @@ function estimateReadingTime(content: string): string {
   return `${minutes} min read`
 }
 
+function formatDate(dateStr: string): string {
+  if (!dateStr) return ''
+  return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+}
+
 export function getAllPosts(): BlogMeta[] {
   if (!fs.existsSync(BLOG_DIR)) return []
 
@@ -34,16 +43,22 @@ export function getAllPosts(): BlogMeta[] {
     return {
       slug,
       title: data.title ?? slug,
-      date: data.date ?? '',
+      date: formatDate(data.date ?? ''),
       description: data.description ?? '',
       readingTime: estimateReadingTime(content),
     }
   })
 
-  return posts.sort((a, b) => (a.date > b.date ? -1 : 1))
+  return posts.sort((a, b) => {
+    const da = new Date(a.date).getTime() || 0
+    const db = new Date(b.date).getTime() || 0
+    return db - da
+  })
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {
+  if (slug !== path.basename(slug) || slug.includes('..')) return null
+
   const filePath = path.join(BLOG_DIR, `${slug}.mdx`)
   if (!fs.existsSync(filePath)) return null
 
@@ -53,7 +68,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   return {
     slug,
     title: data.title ?? slug,
-    date: data.date ?? '',
+    date: formatDate(data.date ?? ''),
     description: data.description ?? '',
     readingTime: estimateReadingTime(content),
     content,

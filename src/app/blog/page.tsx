@@ -1,6 +1,12 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Nav } from '@/components/layout/nav'
 import { getAllPosts } from '@/lib/mdx'
+
+export const metadata: Metadata = {
+  title: 'Blog — Zhang Weiqiang',
+  description: 'Thoughts on engineering, systems, and the craft of building software.',
+}
 
 export default function BlogPage() {
   const posts = getAllPosts()
