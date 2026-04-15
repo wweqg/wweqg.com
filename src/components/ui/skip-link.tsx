@@ -3,7 +3,7 @@
 export function SkipLink() {
   return (
     <a
-      href="#about"
+      href="#main-content"
       style={{
         position: 'absolute',
         left: -9999,

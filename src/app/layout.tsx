@@ -38,10 +38,7 @@ export default function RootLayout({
           href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>"
         />
       </head>
-      <body
-        className="antialiased"
-        style={{ fontFamily: "'Inter', var(--font-inter), system-ui, sans-serif" }}
-      >
+      <body className={`antialiased ${inter.className}`}>
         <SkipLink />
         {children}
       </body>

@@ -1,6 +1,7 @@
 export function Hero() {
   return (
-    <section className="max-w-[640px]" id="about" style={{ padding: '160px 0 var(--s-9)' }}>
+    <section className="relative max-w-[640px]" id="about" style={{ padding: '160px 0 var(--s-9)' }}>
+      <div className="hero-glow" aria-hidden="true" />
       <div
         className="inline-flex items-center font-medium animate-[enter_0.5s_cubic-bezier(0.16,1,0.3,1)_0.1s_forwards]"
         style={{
@@ -31,7 +32,7 @@ export function Hero() {
         style={{
           fontSize: 'var(--t-3xl)',
           lineHeight: 1.18,
-          letterSpacing: 'clamp(-0.8px, -0.025em, -1.5px)',
+          letterSpacing: 'clamp(-1.5px, -0.025em, -0.8px)',
           marginBottom: 'var(--s-5)',
           opacity: 0,
         }}

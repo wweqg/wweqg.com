@@ -8,7 +8,8 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <div
+      <main
+        id="main-content"
         className="mx-auto max-w-[1080px]"
         style={{ padding: '0 var(--s-7)' }}
       >
@@ -16,7 +17,7 @@ export default function Home() {
         <Experience />
         <Projects />
         <Contact />
-      </div>
+      </main>
       <footer
         className="text-center"
         style={{
