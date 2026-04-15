@@ -20,7 +20,7 @@ export function Hero() {
         <a href="#work" className="pill pill-filled">
           See my work <span className="pill-icon">→</span>
         </a>
-        <a href="#" className="pill pill-ghost">
+        <a href="/resume.pdf" className="pill pill-ghost">
           Resume <span className="pill-icon">↗</span>
         </a>
       </div>

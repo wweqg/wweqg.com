@@ -69,17 +69,13 @@ function MagneticNavLink({
     const r = el.getBoundingClientRect()
     const x = (e.clientX - r.left - r.width / 2) * 0.15
     const y = (e.clientY - r.top - r.height / 2) * 0.15
-    el.style.transform = `translate(${x}px, ${y}px)`
+    el.style.setProperty('--tx', `${x}px`)
+    el.style.setProperty('--ty', `${y}px`)
   }
 
   const handleMouseLeave = () => {
-    const el = ref.current
-    if (!el) return
-    el.style.transition = 'transform 0.3s ease, color 0.2s, background 0.2s'
-    el.style.transform = ''
-    setTimeout(() => {
-      if (el) el.style.transition = ''
-    }, 300)
+    ref.current?.style.removeProperty('--tx')
+    ref.current?.style.removeProperty('--ty')
   }
 
   return (

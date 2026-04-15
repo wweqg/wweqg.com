@@ -53,7 +53,7 @@ export const projects = [
     description:
       'High-throughput data processing with exactly-once semantics across 200 nodes.',
     tags: ['Go', 'Kafka', 'K8s'],
-    href: '#',
+    href: '/projects/distributed-pipeline',
   },
   {
     title: 'AI Orchestration',
@@ -62,7 +62,7 @@ export const projects = [
     description:
       'LLM orchestration engine with streaming, function calling, and multi-model routing.',
     tags: ['Python', 'React', 'WebSocket'],
-    href: '#',
+    href: '/projects/ai-orchestration',
   },
   {
     title: 'Design System',
@@ -71,7 +71,7 @@ export const projects = [
     description:
       'Component library with built-in accessibility, theming, and documentation.',
     tags: ['React', 'TypeScript'],
-    href: '#',
+    href: '/projects/design-system',
   },
   {
     title: 'CLI Framework',
@@ -80,6 +80,6 @@ export const projects = [
     description:
       'Extensible command-line toolkit with plugin architecture and rich terminal UI.',
     tags: ['Go', 'Cobra'],
-    href: '#',
+    href: '/projects/cli-framework',
   },
 ] as const
