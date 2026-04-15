@@ -13,7 +13,7 @@ export function Experience() {
         </ScrollReveal>
         <div>
           {experiences.map((exp, i) => (
-            <ExperienceItem key={exp.date} exp={exp} delay={0.05 * (i + 1)} />
+            <ExperienceItem key={`${exp.date}-${exp.company}`} exp={exp} delay={0.05 * (i + 1)} />
           ))}
         </div>
       </div>
