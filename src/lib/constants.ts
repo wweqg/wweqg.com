@@ -67,43 +67,40 @@ export const experiences = [
       'TA for CS2100 (Computer Organisation), CS2030S (Programming Methodology II), and CS2106 (Operating Systems). Guided 200+ students through systems programming and OOP concepts.',
     tags: ['CS2100', 'CS2030S', 'CS2106', 'Teaching'],
   },
+  {
+    date: '2021 — 2025',
+    title: 'B.Comp. Computer Science',
+    company: 'National University of Singapore',
+    description:
+      'Studied computer science with focus on systems programming, algorithms, and software engineering.',
+    tags: ['NUS', 'Computer Science'],
+  },
+  {
+    date: '2017 — 2018',
+    title: 'A-Levels',
+    company: 'Temasek Junior College',
+    description: '',
+    tags: [],
+  },
 ] as const
 
 export const projects = [
   {
     title: 'Peggle',
     metric: '🎮',
-    metricLabel: 'game clone',
+    metricLabel: 'game engine',
     description:
-      'A Peggle game clone built with Swift, featuring physics simulation and level design.',
-    tags: ['Swift', 'iOS', 'Game Dev'],
+      'A physics-based game clone built from scratch with Swift. Custom 2D physics engine handling collision detection, ball trajectories, and real-time rendering. Implemented level editor for user-created stages.',
+    tags: ['Swift', 'iOS', 'Physics Engine', 'SpriteKit'],
     href: 'https://github.com/wweqg/Peggle',
-  },
-  {
-    title: 'PetCode',
-    metric: '📋',
-    metricLabel: 'project mgmt',
-    description:
-      'Project management application designed for software teams, built with Java.',
-    tags: ['Java', 'Team Project'],
-    href: 'https://github.com/wweqg/PetCode',
   },
   {
     title: 'vvtk',
     metric: '🎬',
-    metricLabel: 'volumetric video',
+    metricLabel: 'research toolkit',
     description:
-      'A toolkit for volumetric video research — processing, analysis, and visualization of 3D video data.',
-    tags: ['Rust', 'Research', 'Video'],
+      'A high-performance toolkit for volumetric video research — point cloud processing, quality metrics computation, and 3D video analysis. Built in Rust for speed-critical operations on large datasets.',
+    tags: ['Rust', 'Point Cloud', 'Research', 'CLI'],
     href: 'https://github.com/wweqg/vvtk',
-  },
-  {
-    title: 'Duke',
-    metric: '🤖',
-    metricLabel: 'task bot',
-    description:
-      'A task manager chatbot with natural language parsing, built as part of NUS CS2103T.',
-    tags: ['Java', 'CLI', 'NLP'],
-    href: 'https://github.com/wweqg/Duke',
   },
 ] as const
